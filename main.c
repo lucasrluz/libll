@@ -11,6 +11,20 @@ size_t ll_strlen(char *c) {
     return i;
 }
 
+int ll_strcmp(char *s1, char *s2) {
+    int i = 0;
+
+    while (s1[i] || s2[i]) {
+        if (s1[i] != s2[i]) {
+            return s1[i] - s2[i];
+        }
+
+        i++;
+    }
+
+    return 0;
+}
+
 // I/O
 void ll_putchar(char c) {
     write(1, &c, 1);
@@ -40,10 +54,6 @@ void ll_putnbr(int n) {
 }
 
 // main function
-
 int main() {
-    ll_putendl("lucas");
-    ll_putnbr(-1234);
-
     return 0;
 }
