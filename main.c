@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdlib.h>
 
 // Strings Manipulation
 size_t ll_strlen(char *c) {
@@ -23,6 +24,58 @@ int ll_strcmp(char *s1, char *s2) {
     }
 
     return 0;
+}
+
+int ll_strncmp(char *s1, char *s2, size_t n) {
+    int i = 0;
+
+    while (i < n) {
+        if (s1[i] != s2[i]) {
+            return s1[i] - s2[i];
+        }
+
+        i++;
+    }
+
+    return 0;
+}
+
+char *ll_strcpy(char *dest, char *src) {
+    int i = 0;
+
+    while (src[i] != '\0') {
+        dest[i] = src[i];
+
+        i++;
+    }
+
+    dest[i] = '\0';
+
+    return dest;
+}
+
+char *ll_strdup(char *src) {
+    int i = 0;
+
+    char *dest = malloc(ll_strlen(src));
+
+    ll_strcpy(dest, src);
+
+    return dest;
+}
+
+char *ll_strcat(char *dest, char *src) {
+    int i = 0;
+
+    size_t dest_size = ll_strlen(dest);
+
+    while (src[i] != '\0') {
+       dest[dest_size + i] = src[i];
+
+       i++;
+    }
+    
+    return dest;
 }
 
 // I/O
@@ -55,5 +108,9 @@ void ll_putnbr(int n) {
 
 // main function
 int main() {
+    char *s1 = "Foo";
+    
+    char *ptr = *s1[1];
+
     return 0;
 }
