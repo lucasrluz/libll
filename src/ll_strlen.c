@@ -1,11 +1,11 @@
-#include "libll.h"
+#include <stddef.h>
 
-size_t ll_strlen(char *c) {
-    size_t i = 0;
+size_t ll_strlen(char *str) {
+    size_t size = 0;
 
-    while (c[i]) {
-        i++;
+    while (str[size] != '\0') {
+        size++;
     }
 
-    return i;
+    return size;
 }
