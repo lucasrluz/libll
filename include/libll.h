@@ -5,5 +5,6 @@
 
 size_t ll_strlen(char *str);
 int ll_strcmp(char *str1, char *str2);
+int ll_strncmp(char *str1, char *str2, size_t n);
 
 #endif
