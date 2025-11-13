@@ -29,5 +29,18 @@ int main(void) {
 
     assert(ll_strcpy(ll_strcpy_dest, ll_strcpy_src) == ll_strcpy_dest);
     assert(ll_strcmp(ll_strcpy_src, ll_strcpy_dest) == 0);
-    
+
+    // ll_strdup
+    char *ll_strdup_src = "foo";
+    char *ll_strdup_dest = ll_strdup(ll_strdup_src);
+
+    assert(ll_strcmp(ll_strdup_src, ll_strdup_dest) == 0);
+
+    // ll_strcat
+    char *ll_strcat_src = " bar";
+    char ll_strcat_dest[7] = "foo";
+
+    ll_strcat(ll_strcat_dest, ll_strcat_src);
+
+    assert(ll_strncmp(ll_strcat_dest, "foo bar", ll_strlen(ll_strcat_dest)) == 0);
 }
