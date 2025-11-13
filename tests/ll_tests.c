@@ -22,5 +22,12 @@ int main(void) {
     assert(ll_strncmp("foo", "boo", 1) == 4);
     assert(ll_strncmp("boo", "foo", 3) == -4);
     assert(ll_strncmp("foo", "boo", 3) == 4);
+
+    // ll_strcpy
+    char *ll_strcpy_src = "foo";
+    char ll_strcpy_dest[ll_strlen(ll_strcpy_src)];
+
+    assert(ll_strcpy(ll_strcpy_dest, ll_strcpy_src) == ll_strcpy_dest);
+    assert(ll_strcmp(ll_strcpy_src, ll_strcpy_dest) == 0);
     
 }
